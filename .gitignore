@@ -1,1 +1,2 @@
 unet_epochs30_lr0.0005/
+unet_epochs30_lr0.001_pretrained_resnet/
