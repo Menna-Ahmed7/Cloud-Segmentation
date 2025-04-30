@@ -151,4 +151,5 @@ reference_df = pd.read_csv("D:/ComputerEngineering/Fourth_Year/Second Term/Satel
 # Assert that both have the same IDs in the same order
 assert list(generated_df['id']) == list(reference_df['id']), "ID order mismatch between output and sample submission."
 
+
 print("ID order in output CSV matches the sample submission.")
