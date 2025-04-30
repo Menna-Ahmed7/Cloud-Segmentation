@@ -1,2 +1,3 @@
+Model Link on Kaggle: https://www.kaggle.com/models/mennaahmed7/unet_pretrained_densenet_lr_dice_loss/
 #Ops: 67.035789 GOps
 #Parameters: 13.604642 M
