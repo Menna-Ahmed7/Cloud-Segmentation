@@ -44,17 +44,18 @@ The following diagram illustrates the project pipeline
 
 ```
 Cloud-Segmentation/
-├── src/                                   # Project Implementation
-│   ├── notebooks/                         # Notebooks folder
-│         ├── eda_and_unet_train.ipynb     # EDA and UNet Model notebook 
-│   ├── scripts/                           # Scripts folder
-│         ├── profiler.py                  # Profiler script
-│         ├── run_inference.py             # Inference script
-│   ├── inference.py                       # Inference script for generating predictions
-├── README.md                              # This file
-├── model.zip                              # The model file
-├── team_12.csv                            # Output file (csv)
-├── model_logs.txt                         # The model size and parameters
+├── src/                                         # Project Implementation
+│   ├── notebooks/                               # Notebooks folder
+│         ├── eda_and_unet_train.ipynb           # EDA and UNet Model notebook 
+│         ├── random_forest_segmentation.ipynb   # Random forest notebook 
+│   ├── scripts/                                 # Scripts folder
+│         ├── profiler.py                        # Profiler script
+│         ├── run_inference.py                   # Inference script
+│   ├── inference.py                             # Inference script for generating predictions
+├── README.md                                    # This file
+├── model.zip                                    # The model file
+├── team_12.csv                                  # Output file (csv)
+├── model_logs.txt                               # The model size and parameters
 
 ```
 
@@ -62,7 +63,7 @@ Cloud-Segmentation/
 
 ## profiler.py 
    ```bash
-python profiler.py 8 2 512 512
+python profiler.py 1 2 512 512
    ```
 
 ## run_inference.py
