@@ -8,6 +8,11 @@ The goal of this project is to segment clouds in satellite imagery we tried a cl
 
 ## Project Pipeline
 
+The following diagram illustrates the project pipeline
+
+![Project Pipeline](https://github.com/Menna-Ahmed7/Cloud-Segmentation/raw/main/pipeline.png)
+
+
 1. **Literature Review**  
    - Investigated classical methods (Fmask, Random Forest) and deep learning models (LeNet, UNet, DeepLabV3+).
    - Selected Random Forest, LeNet, UNet (ResNet, DenseNet121 backbones), and DeepLabV3+ (ResNet, EfficientNet-B7 backbones) based on prior research.
@@ -71,7 +76,7 @@ cloud-segmentation/
    ```
 
 4. Run with kaggle for the dataset:
-   - The dataset is not included due to its size. You need to import each notebook to Kaggle to have the dataset
+   - The dataset is not included due to its size. You need to import each notebook in Kaggle to have the dataset
 
 
 ### Evaluating Results
