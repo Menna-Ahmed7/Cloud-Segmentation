@@ -44,18 +44,20 @@ The following diagram illustrates the project pipeline
 
 ```
 Cloud-Segmentation/
-├── src/                                         # Project Implementation
-│   ├── notebooks/                               # Notebooks folder
-│         ├── eda_and_unet_train.ipynb           # EDA and UNet Model notebook 
-│         ├── random_forest_segmentation.ipynb   # Random forest notebook 
-│   ├── scripts/                                 # Scripts folder
-│         ├── profiler.py                        # Profiler script
-│         ├── run_inference.py                   # Inference script
-│   ├── inference.py                             # Inference script for generating predictions
-├── README.md                                    # This file
-├── model.zip                                    # The model file
-├── team_12.csv                                  # Output file (csv)
-├── model_logs.txt                               # The model size and parameters
+├── src/                                                                    # Project Implementation
+│   ├── notebooks/                                                          # Notebooks folder
+│         ├── eda_and_unet_train.ipynb                                      # EDA and UNet Model notebook 
+│         ├── random_forest_segmentation.ipynb                              # Random forest notebook
+|         ├── random-forest-cloud-segmentation-validation.ipynb             # Random forest notebook with validation trails
+|         ├── random-forest-cloud-segmentation-validation-and-test.ipynb    # Random forest notebook with validation and test trails
+│   ├── scripts/                                                            # Scripts folder
+│         ├── profiler.py                                                   # Profiler script
+│         ├── run_inference.py                                              # Inference script
+│   ├── inference.py                                                        # Inference script for generating predictions
+├── README.md                                                               # This file
+├── model.zip                                                               # The model file
+├── team_12.csv                                                             # Output file (csv)
+├── model_logs.txt                                                          # The model size and parameters
 
 ```
 
