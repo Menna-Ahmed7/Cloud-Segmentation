@@ -8,7 +8,9 @@ import numpy as np
 import csv
 import pandas as pd
 import tifffile as tiff
-
+test_folder = "D:/ComputerEngineering/Fourth_Year/Second Term/Satellites/New folder/Cloud-Segmentation/archive/test/test/data"  # or your test images path
+submission_sample_path="D:/ComputerEngineering/Fourth_Year/Second Term/Satellites/New folder/Cloud-Segmentation/archive/sample_submission.csv"
+model_path="D:/ComputerEngineering/Fourth_Year/Second Term/Satellites/New folder/Cloud-Segmentation/new/unet_epochs30_lr0.0005_pretrained_densenet_lr_dice_loss_with_threshold/best_model (3).pth"
 # ---------Encoder---------
 def rle_encode(mask):
     """
@@ -63,7 +65,6 @@ class TestCloudSegmentationDataset(Dataset):
 
 # --------------Main--------------
 # 1. Define the path to your test folder
-test_folder = "D:/ComputerEngineering/Fourth_Year/Second Term/Satellites/New folder/Cloud-Segmentation/archive/test/test/data"  # or your test images path
 
 # 2. Get all image paths from the test folder
 def get_image_paths(folder):
@@ -112,8 +113,8 @@ def process_model_outputs(test_loader, model, output_csv_path='team_12.csv'):
     
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+sample_df = pd.read_csv(submission_sample_path, dtype={'id': str})
 # Ensure ordered image paths
-sample_df = pd.read_csv("D:/ComputerEngineering/Fourth_Year/Second Term/Satellites/New folder/Cloud-Segmentation/archive/sample_submission.csv", dtype={'id': str})
 ordered_filenames = sample_df['id'].tolist()
 # Append '.tif' to match actual file names
 ordered_filenames_with_ext = [f"{fname}.tif" for fname in ordered_filenames]
@@ -133,7 +134,7 @@ model = Unet(encoder_name="densenet121", in_channels=2, classes=2).to(device)
 
 # Don't wrap with DataParallel on CPU
 # Load model parameters with map_location for CPU
-state_dict=torch.load("D:/ComputerEngineering/Fourth_Year/Second Term/Satellites/New folder/Cloud-Segmentation/new/unet_epochs30_lr0.0005_pretrained_densenet_lr_dice_loss_with_threshold/best_model (3).pth", map_location=device)
+state_dict=torch.load(model_path, map_location=device)
 # Strip "module." from keys if present (i.e., saved from DataParallel)
 new_state_dict = {}
 for k, v in state_dict.items():
@@ -146,7 +147,7 @@ process_model_outputs(test_loader, model)
 
 # Load generated and reference submission files
 generated_df = pd.read_csv("team_12.csv", dtype={'id': str})
-reference_df = pd.read_csv("D:/ComputerEngineering/Fourth_Year/Second Term/Satellites/New folder/Cloud-Segmentation/archive/sample_submission.csv", dtype={'id': str})
+reference_df = pd.read_csv(submission_sample_path, dtype={'id': str})
 
 # Assert that both have the same IDs in the same order
 assert list(generated_df['id']) == list(reference_df['id']), "ID order mismatch between output and sample submission."
