@@ -8,6 +8,11 @@ The goal of this project is to segment clouds in satellite imagery we tried a cl
 
 ## Project Pipeline
 
+The following diagram illustrates the project pipeline
+
+![Project Pipeline](https://github.com/Menna-Ahmed7/Cloud-Segmentation/raw/main/pipeline.png)
+
+
 1. **Literature Review**  
    - Investigated classical methods (Fmask, Random Forest) and deep learning models (LeNet, UNet, DeepLabV3+).
    - Selected Random Forest, LeNet, UNet (ResNet, DenseNet121 backbones), and DeepLabV3+ (ResNet, EfficientNet-B7 backbones) based on prior research.
@@ -50,22 +55,11 @@ cloud-segmentation/
 ├── README.md                # This file
 ```
 
-## Prerequisites [TO BE EDITED]
-
-To run the code, ensure you have Python 3.8+ installed. The required packages are listed in `requirements.txt`. Key dependencies include:
-
-- PyTorch (for deep learning models)
-- NumPy, Pandas (for data manipulation)
-- Matplotlib, Seaborn (for visualization)
-- Scikit-learn (for Random Forest and metrics)
-- OpenCV (for image processing)
-
-## Installation [TO BE EDITED]
+## How to run
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-team/cloud-segmentation.git
-   cd cloud-segmentation
+   git clone https://github.com/Menna-Ahmed7/Cloud-Segmentation.git
    ```
 
 2. Create a virtual environment (optional but recommended):
@@ -74,18 +68,15 @@ To run the code, ensure you have Python 3.8+ installed. The required packages ar
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
-3. Install dependencies:
+3. Install dependencies for run_inference.py:
    ```bash
-   pip install -r requirements.txt
+   pip install segmentation-models-pytorch  
+   pip install scikit-image
+   pip install tifffile 
    ```
 
-4. Download the dataset:
-   - The dataset is not included due to its size. Place satellite images and masks in the `data/` directory with the following structure:
-     ```
-     data/
-     ├── images/    # Satellite images
-     ├── masks/     # Corresponding cloud masks
-     ```
+4. Run with kaggle for the dataset:
+   - The dataset is not included due to its size. You need to import each notebook in Kaggle to have the dataset
 
 
 ### Evaluating Results
@@ -99,25 +90,6 @@ The final model (UNet with DenseNet121, channels 1 and 4, 512x512, threshold 0.7
 - Test: Accuracy 93.44%, Dice 0.8937
 - Leaderboard: Public 0.7900, Private 0.7700 (8th place)
 
-
-## Requirements
-
-The `requirements.txt` file includes all necessary packages. Key dependencies:
-```
-torch>=1.9.0
-torchvision>=0.10.0
-numpy>=1.21.0
-pandas>=1.3.0
-matplotlib>=3.4.0
-seaborn>=0.11.0
-scikit-learn>=0.24.0
-opencv-python>=4.5.0
-```
-
-Install with:
-```bash
-!pip install segmentation-models-pytorch
-```
 
 
 ## Contributors <a name = "Contributors"></a>
