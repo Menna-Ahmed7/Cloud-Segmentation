@@ -1,6 +1,6 @@
 # Cloud Segmentation for Satellite Imagery
 
-This repository contains the implementation of a cloud segmentation project for satellite imagery, developed as a project in the Computer Engineering Department at the Faculty of Engineering. The project focuses on detecting clouds in satellite images using classical and deep learning methods, achieving a public leaderboard score of 0.79 and a private score of 0.77, ranking 8th.
+This repository contains the implementation of a cloud segmentation project, developed as a part of sattelite imagery subject at the Computer Engineering Department at the Faculty of Engineering. The project focuses on detecting clouds in satellite images using classical and deep learning methods, achieving a public leaderboard score of 0.79 and a private score of 0.77, ranking 8th.
 
 ## Project Overview
 
@@ -40,22 +40,32 @@ The following diagram illustrates the project pipeline
    - Proposed improvements: semi-automated mislabeled data filtering, adaptive thresholding, targeted data augmentation, hybrid loss functions, model ensembling.
    - Future work: multi-resolution training, lightweight backbones (GANs), additional bands.
 
-## Repository Structure [TO BE EDITED]
+## Repository Structure
 
 ```
-cloud-segmentation/
-├── notebooks/               # Jupyter notebooks for EDA and experiments
-│   ├── eda.ipynb            # Exploratory Data Analysis
-│   ├── preprocessing.ipynb  # Data preprocessing steps
-│   ├── model_training.ipynb # Model training and evaluation
-├── scripts/                 # Python scripts for model training and inference
-│   ├── inference.py         # Inference script for generating predictions
-├── models/                  # Saved model weights (not included; placeholder)
-├── parameters/                 # Output predictions and evaluation metrics
-├── README.md                # This file
+Cloud-Segmentation/
+├── src/                                   # Project Implementation
+│   ├── notebooks/                         # Notebooks folder
+│         ├── eda_and_unet_train.ipynb     # EDA and UNet Model notebook 
+│   ├── scripts/                           # Scripts folder
+│         ├── profiler.py                  # Profiler script
+│         ├── run_inference.py             # Inference script
+│   ├── inference.py                       # Inference script for generating predictions
+├── README.md                              # This file
+├── model.zip                              # The model file
+├── team_12.csv                            # Output file (csv)
+├── model_logs.txt                         # The model size and parameters
+
 ```
 
-## How to run
+# How to Run
+
+## profiler.py 
+   ```bash
+python profiler.py 8 2 512 512
+   ```
+
+## run_inference.py
 
 1. Clone the repository:
    ```bash
@@ -68,19 +78,27 @@ cloud-segmentation/
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
-3. Install dependencies for run_inference.py:
+3. Install dependencies:
    ```bash
    pip install segmentation-models-pytorch  
    pip install scikit-image
    pip install tifffile 
    ```
 
-4. Run with kaggle for the dataset:
-   - The dataset is not included due to its size. You need to import each notebook in Kaggle to have the dataset
+4. Add the required paths for the following variables:
+- **model_path**
+- **submission_sample_path**
+- **test_folder**
+   
 
 
-### Evaluating Results
-Evaluation metrics (Dice score, accuracy) are computed during inference and saved in `results/`. To visualize results, use `notebooks/model_training.ipynb`.
+## The notebooks
+
+1. Import the notebook into kaggle:
+
+2. Add the dataset as an input
+  - Dataset link: https://www.kaggle.com/datasets/aliaagheis/cloud-masking-dataset
+
 
 ## Results
 
