@@ -63,7 +63,7 @@ Cloud-Segmentation/
 
 ## profiler.py 
    ```bash
-python profiler.py 8 2 512 512
+python profiler.py 1 2 512 512
    ```
 
 ## run_inference.py
