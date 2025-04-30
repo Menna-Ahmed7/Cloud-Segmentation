@@ -53,7 +53,6 @@ Cloud-Segmentation/
 │   ├── scripts/                                                            # Scripts folder
 │         ├── profiler.py                                                   # Profiler script
 │         ├── run_inference.py                                              # Inference script
-│   ├── inference.py                                                        # Inference script for generating predictions
 ├── README.md                                                               # This file
 ├── model.zip                                                               # The model file
 ├── team_12.csv                                                             # Output file (csv)
