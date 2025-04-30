@@ -57,6 +57,7 @@ Cloud-Segmentation/
 ├── model.zip                                                               # The model file
 ├── team_12.csv                                                             # Output file (csv)
 ├── model_logs.txt                                                          # The model size and parameters
+├── Team12-Phase2.pdf                                                       # Report
 
 ```
 
