@@ -1,3 +1,6 @@
 unet_epochs30_lr0.0005/
 unet_epochs30_lr0.001_pretrained_resnet/
 unet_epochs30_lr0.0005_pretrained_resnet_final_filter/
+new/
+archive/
+old/
