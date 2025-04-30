@@ -48,8 +48,8 @@ Cloud-Segmentation/
 │   ├── notebooks/                                                          # Notebooks folder
 │         ├── eda_and_unet_train.ipynb                                      # EDA and UNet Model notebook 
 │         ├── random_forest_segmentation.ipynb                              # Random forest notebook
-|         ├── random-forest-cloud-segmentation-validation.ipynb             # Random forest notebook with validation trails
-|         ├── random-forest-cloud-segmentation-validation-and-test.ipynb    # Random forest notebook with validation and test trails
+|         ├── random-forest-cloud-segmentation-validation.ipynb             # Random forest notebook with validation trials
+|         ├── random-forest-cloud-segmentation-validation-and-test.ipynb    # Random forest notebook with validation and test trials
 │   ├── scripts/                                                            # Scripts folder
 │         ├── profiler.py                                                   # Profiler script
 │         ├── run_inference.py                                              # Inference script
