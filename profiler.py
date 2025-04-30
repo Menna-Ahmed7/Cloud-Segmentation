@@ -79,6 +79,14 @@ def count_linear(m, x, y):
 
     m.total_ops += torch.Tensor([int(total_ops)])
 
+# The nn.Identity layer performs no computations—it simply passes its input through unchanged. But for profiling consistency, 
+# we can still implement a hook function for it that sets total_ops to zero and counts the number of elements it processes (if needed).
+def count_identity(m, x, y):
+    x = x[0]
+    nelements = x.numel()
+    total_ops = 0  # No computation in Identity
+    m.total_ops += torch.Tensor([int(total_ops)])
+
 def profile(model, input_size, custom_ops = {}):
 
     model.eval()
@@ -105,12 +113,14 @@ def profile(model, input_size, custom_ops = {}):
             m.register_forward_hook(count_linear)
         elif isinstance(m, (nn.Dropout, nn.Dropout2d, nn.Dropout3d)):
             pass
+        elif isinstance(m, nn.Identity):
+            m.register_forward_hook(count_identity)
         else:
             print("Not implemented for ", m)
 
     model.apply(add_hooks)
 
-    x = torch.zeros(input_size)
+    x = torch.zeros(1,*input_size)
     model(x)
 
     total_ops = 0
