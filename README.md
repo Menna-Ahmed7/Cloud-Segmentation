@@ -28,7 +28,7 @@ The goal of this project is to segment clouds in satellite imagery we tried a cl
    - Results: Training Dice: 0.8994, Validation Dice: 0.9024, Test Dice: 0.8937.
 
 5. **Model Evaluation**  
-   - Conducted 13 trials testing LeNet, UNet (ResNet, DenseNet121), DeepLabV3+ (ResNet, EfficientNet-B7), various thresholds, Dice Loss, and image sizes.
+   - Conducted 13 trials testing LeNet, UNet (ResNet, DenseNet121), DeepLabV3+ (ResNet, EfficientNet-B7), Random Forest various thresholds, Dice Loss, and image sizes.
    - Best leaderboard score: UNet with DenseNet121, channels 1 and 4, 512x512 (0.7900 public, 0.7700 private).
 
 6. **Enhancements and Future Work**  
