@@ -87,7 +87,7 @@ python profiler.py 1 2 512 512
    ```
 
 4. Add the required paths for the following variables:
-- **model_path**
+- **model_path (after unzipping the model file)**
 - **submission_sample_path**
 - **test_folder**
    
