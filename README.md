@@ -72,7 +72,7 @@ python profiler.py 1 2 512 512
    ```bash
    git clone https://github.com/Menna-Ahmed7/Cloud-Segmentation.git
    ```
-
+2. Unzip the model file
 2. Create a virtual environment (optional but recommended):
    ```bash
    python -m venv venv
